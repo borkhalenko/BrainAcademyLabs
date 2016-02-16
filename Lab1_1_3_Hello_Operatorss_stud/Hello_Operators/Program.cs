@@ -40,24 +40,59 @@ namespace HelloOperators_stud
             Console.ReadLine();
         }
         #region farmer
-        static void Farmer_puzzle()
-        { 
+        static void Farmer_puzzle(){
+            string help = @"There: farmer and wolf -1
+                            There: farmer and cabbage - 2
+                            There: farmer and goat -3
+                            There: farmer - 4
+                            Back: farmer and wolf - 5
+                            Back: farmer and cabbage - 6
+                            Back: farmer and goat - 7
+                            Back: farmer - 8";
+            
+
+            //int thereFarmerWolf = 1;
+            //int thereFarmerCabbage = 2;
+            //int thereFarmerGoat = 3;
+            //int thereFarmer = 4;
+            //int backFarmerWolf = 5;
+            //int backFarmerCabbage = 6;
+            //int backFarmerGoat = 7;
+            //int backFarmer = 8;
+            
+             
 
         }
         #endregion
 
         #region calculator
-        static void Calculator()
-        {
+        static void Calculator(){
            
-
         }
         #endregion
 
-        #region Factorial
-        static void Factorial_calculation()
-        {
-          
+        #region factorial
+        static void Factorial_calculation(){
+            int n = 0;
+            Console.WriteLine("Enter arguments: ");
+            
+            if (int.TryParse(Console.ReadLine(), out n)== false) {
+                Console.WriteLine("Can't parse input to Int32 number.");
+                return;
+            }
+            int result = 1;
+            if (n < 0){
+                throw new ArgumentException("Input argument must be greather than 0.");
+            }
+            if (n == 0){
+                result = 1;
+                Console.WriteLine("factorial =" + result);
+                return;
+            }
+            while (n > 1){
+                result *= n--;
+            }
+            Console.WriteLine("factorial = " + result);
         }
         #endregion
     }
